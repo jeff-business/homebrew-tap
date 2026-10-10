@@ -22,8 +22,8 @@ cask "gitler" do
     end
   end
 
-  depends_on :macos
   depends_on formula: "git"
+  depends_on :macos
 
   app "Gitler.app"
   binary "#{appdir}/Gitler.app/Contents/MacOS/gitler"
