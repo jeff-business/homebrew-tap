@@ -1,0 +1,30 @@
+name: Check casks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - name: Test updater
+        run: python3 -m unittest discover -s scripts
+      - name: Load tap
+        run: brew tap better-software/tap "$GITHUB_WORKSPACE"
+      - name: Check cask style and metadata
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
+        run: |
+          brew style --cask better-software/tap/gitler
+          brew audit --cask better-software/tap/gitler
+      - name: Verify Apple Silicon download
+        run: brew fetch --cask --arch=arm64 better-software/tap/gitler
+      - name: Verify Intel download
+        run: brew fetch --cask --arch=x86_64 better-software/tap/gitler
