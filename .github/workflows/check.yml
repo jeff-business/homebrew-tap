@@ -28,3 +28,9 @@ jobs:
         run: brew fetch --cask --arch=arm64 better-software/tap/gitler
       - name: Verify Intel download
         run: brew fetch --cask --arch=x86_64 better-software/tap/gitler
+      - name: Verify application and command installation
+        run: |
+          brew install --cask --appdir="$RUNNER_TEMP/apps" better-software/tap/gitler
+          test -d "$RUNNER_TEMP/apps/Gitler.app"
+          test -x "$(brew --prefix)/bin/gitler"
+          test "$(readlink "$(brew --prefix)/bin/gitler")" = "$RUNNER_TEMP/apps/Gitler.app/Contents/MacOS/gitler"
