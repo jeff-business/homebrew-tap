@@ -19,7 +19,7 @@ Upgrade with `brew update && brew upgrade --cask gitler`.
 
 ## Concentration Slop
 
-Install [Concentration Slop](https://github.com/jeff-business/concentration-slop) on macOS 14+, on Apple Silicon or Intel:
+Install [Concentration Slop](https://github.com/lebedev-nikita/concentration-slop) on macOS 14+, on Apple Silicon or Intel:
 
 ```sh
 brew install --cask jeff-business/tap/concentration-slop
