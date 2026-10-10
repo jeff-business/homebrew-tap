@@ -1,9 +1,9 @@
 cask "gitler" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.2.0"
-  sha256 arm:   "61d6a63fc5b2fbfe91417663951580ae26b2c918868ccc25c4ed3fe61d30946c",
-         intel: "1055c74fec7f35e9b712e124b64451b64416c9d21cb78d29b99fb888b98a1bfb"
+  version "0.2.1"
+  sha256 arm:   "49340b2c295a9dacdb0b60dc2246813f47c6ff925e8b8d5bbe29a45bc0938fec",
+         intel: "5ca1436a94c3d0b1222130f47ca0d7e65f11da3bc43eaba47e5c89f8b282d317"
 
   url "https://github.com/lebedev-nikita/gitler/releases/download/v#{version}/Gitler_#{version}_macos-#{arch}.app.tar.gz"
   name "Gitler"
