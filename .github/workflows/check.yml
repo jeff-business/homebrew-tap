@@ -25,9 +25,9 @@ jobs:
           brew style --cask jeff-business/tap/gitler
           brew audit --cask jeff-business/tap/gitler
       - name: Verify Apple Silicon download
-        run: brew fetch --cask --arch=arm64 jeff-business/tap/gitler
+        run: brew fetch --cask --arch=arm jeff-business/tap/gitler
       - name: Verify Intel download
-        run: brew fetch --cask --arch=x86_64 jeff-business/tap/gitler
+        run: brew fetch --cask --arch=intel jeff-business/tap/gitler
       - name: Verify application and command installation
         run: |
           brew install --cask --appdir="$RUNNER_TEMP/apps" jeff-business/tap/gitler
