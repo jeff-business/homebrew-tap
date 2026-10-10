@@ -37,11 +37,11 @@ class UpdateCaskTests(unittest.TestCase):
 
     def test_both_architectures_and_cli_use_the_selected_release(self):
         item = release("v0.2.0-rc.2")
-        text = update_cask.render_cask("better-software/gitler", item, checksums(item))
+        text = update_cask.render_cask("jeff-business/gitler", item, checksums(item))
         self.assertIn('version "0.2.0-rc.2"', text)
         self.assertIn('sha256 arm:   "' + "a" * 64 + '"', text)
         self.assertIn('intel: "' + "b" * 64 + '"', text)
-        self.assertIn('https://github.com/better-software/gitler/releases/download/v#{version}', text)
+        self.assertIn('https://github.com/jeff-business/gitler/releases/download/v#{version}', text)
         self.assertIn('binary "#{appdir}/Gitler.app/Contents/MacOS/gitler"', text)
 
     def test_incomplete_and_mismatched_downloads_are_rejected(self):
@@ -63,7 +63,7 @@ class UpdateCaskTests(unittest.TestCase):
                 else:
                     changed["draft"] = True
                 with self.assertRaises(ValueError):
-                    update_cask.render_cask("better-software/gitler", changed, checksum_text)
+                    update_cask.render_cask("jeff-business/gitler", changed, checksum_text)
 
     def test_invalid_release_does_not_overwrite_existing_cask(self):
         import json
@@ -82,7 +82,7 @@ class UpdateCaskTests(unittest.TestCase):
 
             with patch.object(update_cask, "gh", side_effect=fake_gh):
                 with self.assertRaises(ValueError):
-                    update_cask.update("better-software/gitler", output)
+                    update_cask.update("jeff-business/gitler", output)
             self.assertEqual(output.read_text(), "existing cask\n")
 
 

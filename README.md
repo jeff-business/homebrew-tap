@@ -1,9 +1,9 @@
 # Better Software Homebrew tap
 
-Install [Gitler](https://github.com/better-software/gitler) on macOS, on Apple Silicon or Intel:
+Install [Gitler](https://github.com/jeff-business/gitler) on macOS, on Apple Silicon or Intel:
 
 ```sh
-brew install --cask better-software/tap/gitler
+brew install --cask jeff-business/tap/gitler
 ```
 
 This installs `Gitler.app` and the `gitler` command, with Git as a dependency:

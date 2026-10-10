@@ -17,20 +17,20 @@ jobs:
       - name: Test updater
         run: python3 -m unittest discover -s scripts
       - name: Load tap
-        run: brew tap better-software/tap "$GITHUB_WORKSPACE"
+        run: brew tap jeff-business/tap "$GITHUB_WORKSPACE"
       - name: Check cask style and metadata
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
         run: |
-          brew style --cask better-software/tap/gitler
-          brew audit --cask better-software/tap/gitler
+          brew style --cask jeff-business/tap/gitler
+          brew audit --cask jeff-business/tap/gitler
       - name: Verify Apple Silicon download
-        run: brew fetch --cask --arch=arm64 better-software/tap/gitler
+        run: brew fetch --cask --arch=arm64 jeff-business/tap/gitler
       - name: Verify Intel download
-        run: brew fetch --cask --arch=x86_64 better-software/tap/gitler
+        run: brew fetch --cask --arch=x86_64 jeff-business/tap/gitler
       - name: Verify application and command installation
         run: |
-          brew install --cask --appdir="$RUNNER_TEMP/apps" better-software/tap/gitler
+          brew install --cask --appdir="$RUNNER_TEMP/apps" jeff-business/tap/gitler
           test -d "$RUNNER_TEMP/apps/Gitler.app"
           test -x "$(brew --prefix)/bin/gitler"
           test "$(readlink "$(brew --prefix)/bin/gitler")" = "$RUNNER_TEMP/apps/Gitler.app/Contents/MacOS/gitler"

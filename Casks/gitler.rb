@@ -5,10 +5,10 @@ cask "gitler" do
   sha256 arm:   "dd4fb4c7022c59f54a09ade72318521a5e6755f237b3eaf63745362dc26de75b",
          intel: "bc37f5861eecc54091d3853b3dc02b7f08c2c4cf3550b3c0760d3da968379bd1"
 
-  url "https://github.com/lebedev-nikita/gitler/releases/download/v#{version}/Gitler_#{version}_macos-#{arch}.app.tar.gz"
+  url "https://github.com/jeff-business/gitler/releases/download/v#{version}/Gitler_#{version}_macos-#{arch}.app.tar.gz"
   name "Gitler"
   desc "Read-only Git graph for branches and worktrees"
-  homepage "https://github.com/lebedev-nikita/gitler"
+  homepage "https://github.com/jeff-business/gitler"
 
   livecheck do
     url :url
