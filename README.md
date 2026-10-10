@@ -2,7 +2,7 @@
 
 ## Gitler
 
-Install [Gitler](https://github.com/jeff-business/gitler) on macOS, on Apple Silicon or Intel:
+Install [Gitler](https://github.com/lebedev-nikita/gitler) on macOS, on Apple Silicon or Intel:
 
 ```sh
 brew install --cask jeff-business/tap/gitler
