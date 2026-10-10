@@ -24,23 +24,15 @@ jobs:
         run: |
           brew style --cask jeff-business/tap/gitler
           brew audit --cask jeff-business/tap/gitler
-          brew style --cask jeff-business/tap/concentration-slop
-          brew audit --cask --strict jeff-business/tap/concentration-slop
       - name: Verify Apple Silicon download
         run: |
           brew fetch --cask --arch=arm jeff-business/tap/gitler
-          brew fetch --cask --arch=arm jeff-business/tap/concentration-slop
       - name: Verify Intel download
         run: |
           brew fetch --cask --arch=intel jeff-business/tap/gitler
-          brew fetch --cask --arch=intel jeff-business/tap/concentration-slop
       - name: Verify application and command installation
         run: |
           brew install --cask --appdir="$RUNNER_TEMP/apps" jeff-business/tap/gitler
           test -d "$RUNNER_TEMP/apps/Gitler.app"
           test -x "$(brew --prefix)/bin/gitler"
           test "$(readlink "$(brew --prefix)/bin/gitler")" = "$RUNNER_TEMP/apps/Gitler.app/Contents/MacOS/gitler"
-      - name: Verify Concentration Slop installation
-        run: |
-          brew install --cask --appdir="$RUNNER_TEMP/apps" jeff-business/tap/concentration-slop
-          test -d "$RUNNER_TEMP/apps/Concentration Slop.app"
