@@ -1,6 +1,6 @@
 cask "gitler" do
-  version "0.4.5-rc.1"
-  sha256 "5848d71d8655f2638f474c909e4e9b239824eff46c89b4603b471dbf11a98635"
+  version "0.5.0"
+  sha256 "49d1fd74cb5315f25dbd3179fc936178b668164b9f660d40cb40d1c0a053e2e6"
 
   url "https://github.com/lebedev-nikita/gitler/releases/download/v#{version}/Gitler_#{version}_macos-arm64.app.tar.gz"
   name "Gitler"
